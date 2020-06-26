@@ -1,0 +1,22 @@
+{
+  "name": "adventurehookgenerator",
+  "version": "1.0.0",
+  "description": "A single page app which uses React, Express, Node, and MySQL to generate adventure hooks for ttrpgs",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medricr/AdventureHookGenerator.git"
+  },
+  "author": "Medric A Riley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/medricr/AdventureHookGenerator/issues"
+  },
+  "homepage": "https://github.com/medricr/AdventureHookGenerator#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
