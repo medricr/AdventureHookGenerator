@@ -5,7 +5,7 @@
 		"database": "adHooks",
 		"host": "localhost",
 		"dialect": "mysql",
-		"port": "3030"
+		"port": "3306"
 	},
 	"test": {
 		"username": "root",
