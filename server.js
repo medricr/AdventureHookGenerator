@@ -19,7 +19,6 @@ app.get('/getAnts', function(req,res){
 	})
 })
 
-// TODO: Wrap the following function in a connection to the MySQL DB
 app.listen(PORT, ()=> {
 	console.log('App listening on port ' + PORT + '! :^)')
 })

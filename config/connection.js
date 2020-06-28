@@ -5,7 +5,8 @@ const connection = mysql.createConnection({
 	port: 3306,
 	user: 'root',
 	password: 'root',
-	database: 'adHooks'
+	database: 'adHooks',
+	multipleStatements: true
 });
 
 connection.connect(function(err){
