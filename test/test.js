@@ -1,7 +1,7 @@
 
 const expect = require('chai').expect;
 var assert = require('assert');
-const connection = require('../config/connection.js');
+const connection = require('../config/connection');
 
 describe("canary test", function () {
 	// A "canary" test is one we set up to always pass
@@ -27,6 +27,7 @@ describe ('Random Selection Test (one element)', function(){
 	})
 })
 
+// Test random selection of one element from each column in table
 describe ('Random Selection Test (three elements)', function(){
 	let random_sels = [];
 	connection.query(
@@ -45,9 +46,9 @@ describe ('Random Selection Test (three elements)', function(){
 	})
 })
 
+// Test concatenation of elements into a single string
 describe ('String Builder Test', function(){
 	let final_string = "";
-	// let random_sels = [];
 	connection.query(
 		'SELECT info_source FROM present_tense ORDER BY RAND() LIMIT 1; SELECT antagonist FROM present_tense ORDER BY RAND() LIMIT 1; SELECT threat FROM present_tense ORDER BY RAND() LIMIT 1',
 		function (err, res) {
@@ -63,4 +64,11 @@ describe ('String Builder Test', function(){
 		assert.equal(typeof final_string, 'string')
 	})
 })
+
+// TODO: Test construction of multiple adventure hooks in one go
+
+// TODO: Test selection of one element from y, where y is a user specified column
+
+// TODO: Test selection of x elements from a column, where x is a user specified integer
+
 

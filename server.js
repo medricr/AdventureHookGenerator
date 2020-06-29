@@ -2,7 +2,7 @@
 const express = require('express');
 const PORT = process.env.port || 3030;
 const app = express();
-
+const routes = require('./routes');
 const connection = require('./config/connection.js');
 
 // App Configuration
@@ -19,6 +19,7 @@ app.get('/getAnts', function(req,res){
 	})
 })
 
+app.use(routes)
 app.listen(PORT, ()=> {
 	console.log('App listening on port ' + PORT + '! :^)')
 })
