@@ -11,9 +11,11 @@ CREATE TABLE present_tense (
 	PRIMARY KEY ( id )
 );
 
+
 INSERT INTO present_tense (info_source, antagonist, threat)
 VALUES 
-("Rumour has it that ", "bandits prowling the roads have", "kidnapped the crown prince"),
-("The elders from the neighboring village have informed you that ", "a family of manticores has ", "begun preparing for a ritual which will awaken an elder dragon"),
-("The advisor to the royal famiy has told you that ", "the local court wizard has ", "absconded with a precious religous artifact from a local temple."),
-("The town drunk has been heard saying that ", " a coven of witches has ", "cursed the region's nobility")
+("Rumour has it that ", "bandits prowling the roads ", " will kidnap the crown prince"),
+("The elders from the neighboring village have informed you that ", "a family of manticores ", "has begun preparing for a ritual which will awaken an elder dragon"),
+("The advisor to the royal famiy has told you that ", "the local court wizard ", "has absconded with a precious religous artifact from a local temple."),
+("The town drunk has been heard saying that ", " a coven of witches ", "has cursed the region's nobility"),
+("Reports have come from from afar that ", "an ancient vampire lord ", "will wipe out all life on the continent")
