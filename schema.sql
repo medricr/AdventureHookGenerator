@@ -20,3 +20,4 @@ VALUES
 ("The town drunk has been heard saying that they personally know ", " a coven of witches ", "has cursed the local nobility"),
 ("Reports have come from from afar that ", "an ancient vampire lord ", "intends to wipe out all life on the continent")
 ("A mysterious letter has made its way into your hands, stating that ", "a group of cultists ", "intends to start a war")
+("Distrubing reports have surfaced regarding ", "a woman claiming to be a living saint ", "has killed the priest of a local temple")

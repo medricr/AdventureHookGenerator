@@ -2,6 +2,7 @@
 const expect = require('chai').expect;
 var assert = require('assert');
 const connection = require('../config/connection');
+const { end } = require('../config/connection');
 
 describe("canary test", function () {
 	// A "canary" test is one we set up to always pass
@@ -19,7 +20,7 @@ describe ('Random Selection Test (one element)', function(){
 		if(err) throw err;
 		// console.log(res)
 		random_sel = res;
-		connection.end;
+		end;
 	})
 
 	it("should only return 1 value, randomly selected from the specified column", function(){
@@ -97,7 +98,41 @@ describe ('Multi Hook Generator', function(){
 })
 
 // TODO: Test selection of one element from y, where y is a user specified column
+describe('Column Selection Test', function(){
+	let column_sel = [];
+	let col = 'antagonist '
+	let sql_query = 'SELECT ' + col + 'FROM present_tense ORDER BY RAND() LIMIT 1';
+
+	connection.query(sql_query, function(err, res){
+		if(err) throw err;
+
+		column_sel.push(res);
+
+		connection.end;
+	})
+
+	it('Should return a result from a single user specified column, in this case the antagonist column', function(){
+		assert.equal(column_sel.length, 1);
+		console.log(column_sel);
+	})
+})
 
 // TODO: Test selection of x elements from a column, where x is a user specified integer
+describe('Multi Pull', function(){
+	let multi = [];
 
+	connection.query('SELECT info_source FROM present_tense ORDER BY RAND() LIMIT 4', function(err, res){
+		if(err) throw err;
+
+		multi = res;
+
+		connection.end
+	})
+
+	it("Should retrieve a number of records equal to a user specified number, passed in as a prameter. In this case, that number is 4", function () {
+		assert.equal(multi.length, 4)
+		console.log(multi);
+
+	})
+})
 
