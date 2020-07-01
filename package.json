@@ -12,7 +12,7 @@
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-		"test": "mocha"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "concurrently": "^5.2.0",
     "create-react-app": "^3.4.1",
     "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.4",
     "mocha": "^8.0.1",
     "mysql": "^2.18.1",
     "sequelize": "^6.2.2"
