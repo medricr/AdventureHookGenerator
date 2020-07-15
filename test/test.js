@@ -53,10 +53,13 @@ describe ('Random Selection Test (three elements)', function(){
 describe ('String Builder Test', function(){
 	let final_string = "";
 	connection.query(
-		'SELECT info_source FROM present_tense ORDER BY RAND() LIMIT 1; SELECT antagonist FROM present_tense ORDER BY RAND() LIMIT 1; SELECT threat FROM present_tense ORDER BY RAND() LIMIT 1',
+		// 'SELECT info_source FROM present_tense ORDER BY RAND() LIMIT 1; SELECT antagonist FROM present_tense ORDER BY RAND() LIMIT 1; SELECT threat FROM present_tense ORDER BY RAND() LIMIT 1',
+		'SELECT info_source, antagonist, threat FROM present_tense ORDER BY RAND() LIMIT 1',
 		function (err, res) {
 			if (err) throw err;
-			final_string = final_string + res[0][0].info_source + res[1][0].antagonist + res[2][0].threat
+			// final_string = final_string + res[0][0].info_source + res[1][0].antagonist + res[2][0].threat
+			final_string = final_string + res[0].info_source + res[0].antagonist + res[0].threat
+			// console.log("string builder result -> ", fields)
 
 			
 			connection.end;
@@ -66,6 +69,7 @@ describe ('String Builder Test', function(){
 	it("Should concatenate all results into a single string", function(){
 		assert.equal(typeof final_string, 'string')
 		console.log('final constructed string -> ' + final_string)
+		
 	})
 })
 
@@ -120,8 +124,10 @@ describe('Column Selection Test', function(){
 // TODO: Test selection of x elements from a column, where x is a user specified integer
 describe('Multi Pull', function(){
 	let multi = [];
+	let num_of_records = '4'
+	let queryString = 'SELECT info_source FROM present_tense ORDER BY RAND() LIMIT ' + num_of_records;
 
-	connection.query('SELECT info_source FROM present_tense ORDER BY RAND() LIMIT 4', function(err, res){
+	connection.query(queryString, function(err, res){
 		if(err) throw err;
 
 		multi = res;
