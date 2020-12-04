@@ -2,7 +2,11 @@ import axios from 'axios';
 
 export default {
 	// Testing Routes
-	getRoute: function(){
+	getHook: function(){
+		
 		return axios.get('/generateOne');
+	},
+	getHookMulti: function(){
+		return axios.get('/generateMultiple')
 	}
 }

@@ -50,7 +50,7 @@ describe ('Random Selection Test (three elements)', function(){
 
 // Test concatenation of elements into a single string
 // ! BAD TEST - Will always pass because final string is initialized as a string, checking whether or not it is typeof string is redundant
-describe ('String Builder Test', function(){
+describe ('String Builder Test', function(req, res){
 	let final_string = "";
 	connection.query(
 		// 'SELECT info_source FROM present_tense ORDER BY RAND() LIMIT 1; SELECT antagonist FROM present_tense ORDER BY RAND() LIMIT 1; SELECT threat FROM present_tense ORDER BY RAND() LIMIT 1',
@@ -65,6 +65,8 @@ describe ('String Builder Test', function(){
 			connection.end;
 		}
 	)
+
+	res.json(final_string)
 
 	it("Should concatenate all results into a single string", function(){
 		assert.equal(typeof final_string, 'string')
