@@ -4,7 +4,7 @@
   "description": "A single page app which uses Vue.js, Express, Node, and MySQL to generate adventure hooks for ttrpgs",
   "main": "server.js",
   "scripts": {
-		"postinstall": "NODE_ENV=development && npm run client-install && npm run client-build && NODE_ENV=production",
+		"postinstall": "NODE_ENV=development && npm run install && npm run build && NODE_ENV=production",
     "begin": "npm run build && node server.js",
     "start": "node server.js",
     "start:original": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
