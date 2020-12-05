@@ -11,7 +11,7 @@ const Sequelize = require('sequelize');
 // });
 let sequelize = null;
 if(process.env.JAWSDB_URL){
-	sequelize = new Sequelize(production.env.JAWSDB_URL, {dialect: 'mysql'})
+	sequelize = new Sequelize(config.production.use_env_varable, {dialect: 'mysql'})
 
 }
 else{
@@ -22,9 +22,14 @@ else{
 		pool: {
 			max: 5,
 			min: 0,
-			idle: 10000	
+			idle: 10000
+
+
+
+		}
+	})
 }
-})
+	
 
 
 
