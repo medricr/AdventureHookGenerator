@@ -6,23 +6,17 @@ const Sequelize = require('sequelize');
 const adHook = require("../models/adHook.js")
 
 module.exports = {
-	generate_hook: function(req,res){
-
-		
+	generate_hook: function(req,res){	
 		let final_string = "";
-
 		adHook.findAll({
-			order: Sequelize.literal('rand()'), limit: 3
+			order: Sequelize.literal('rand()'), limit: 3,
 		}).then((results) => {
 			console.log(results);
 			console.log("final_string no edit -> ", final_string);
 			final_string = results[0].info_source + results[1].antagonist + results[2].threat;
 			console.log("final_string post edit -> ", final_string);
 			res.json(final_string)
-		})
-
-
-		
+		})		
 	},
 
 	// ! ARRAY IS CLEARED UPON EXITING FOR LOOP?
@@ -46,8 +40,6 @@ module.exports = {
 				}
 			)
 		}
-
-
 		res.json(final_string_array)
 		// console.log(final_string_array)
 	}

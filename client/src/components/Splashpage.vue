@@ -3,7 +3,6 @@
 		<h1>{{adventureHook.data}}</h1>
 		<button v-on:click="generateOne">genrate one</button>
 
-		<button v-on:click="generateMultiple">generate five</button>
 	</div>
 </template>
 
@@ -21,13 +20,7 @@ export default {
 		async generateOne(){
 			this.adventureHook = await API.getHook();
 			console.log("retrieved adventure hook -> ", this.adventureHook.data);
-		},
-
-		generateMultiple(){
-			API.getHookMulti();
 		}
-
-		
 	}
 }
 </script>
