@@ -1,24 +1,28 @@
 // TODO: Create controller for the creation of an adventure hook, multiple adventure hooks, or for the retrieval of just antagonists / sources of info/ and threats
 
 const connection = require('../config/connection')
+const Sequelize = require('sequelize');
 
 const adHook = require("../models/adHook.js")
 
 module.exports = {
-	generate_hook:  function(req,res){
-	
+	generate_hook: function(req,res){
 
-			let final_string = "";
 		
-				adHook.findAll({}).then((results) => {
-					console.log(results); 
-					console.log("final_string no edit -> ", final_string); 
-					final_string = results[0].info_source;
-					console.log("final_string post edit -> ", final_string);
-					res.json(final_string)
+		let final_string = "";
 
-				})
+		adHook.findAll({
+			order: Sequelize.literal('rand()'), limit: 3
+		}).then((results) => {
+			console.log(results);
+			console.log("final_string no edit -> ", final_string);
+			final_string = results[0].info_source + results[1].antagonist + results[2].threat;
+			console.log("final_string post edit -> ", final_string);
+			res.json(final_string)
+		})
 
+
+		
 	},
 
 	// ! ARRAY IS CLEARED UPON EXITING FOR LOOP?
