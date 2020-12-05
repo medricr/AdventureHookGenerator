@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/medricr/AdventureHookGenerator#readme",
   "dependencies": {
+    "@vue/cli": "^4.5.9",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.0",
     "chai": "^4.2.0",
