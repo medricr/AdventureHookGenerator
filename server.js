@@ -1,6 +1,6 @@
 // Imports
 const express = require('express');
-const PORT = process.env.port || 3030;
+const PORT = process.env.PORT || 3030;
 const app = express();
 const routes = require('./routes');
 const connection = require('./config/connection.js');
