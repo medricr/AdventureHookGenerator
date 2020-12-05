@@ -16,8 +16,9 @@
 		"logging": false
 	},
 	"production": {
+		"username": "root",
+		"password": "root",
 		"use_env_variable": "JAWSDB_URL",
-		"dialect": "mysql",
-		"port": "3306"
+		"dialect": "mysql"
 	}
 }

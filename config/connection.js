@@ -9,15 +9,21 @@ const Sequelize = require('sequelize');
 // 	database: 'adHooks',
 // 	multipleStatements: true
 // });
-const sequelize = new Sequelize("adventure_hooks_db", "root", "root", {
-	host: 'localhost',
-	port: 3306,
-	dialect: 'mysql',
-	pool: {
-		max: 5,
-		min: 0,
-		idle: 10000
-	}
+let sequelize = null;
+if(process.env.JAWSDB_URL){
+	sequelize = new Sequelize(config.production.use_env_varable, {dialect: 'mysql'})
+
+}
+else{
+	sequelize = new Sequelize("adventure_hooks_db", "root", "root", {
+		host: 'localhost',
+		port: 3306,
+		dialect: 'mysql',
+		pool: {
+			max: 5,
+			min: 0,
+			idle: 10000	
+}
 })
 
 
