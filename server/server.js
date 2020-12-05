@@ -2,11 +2,11 @@
 const express = require('express');
 const PORT = process.env.port || 3030;
 const app = express();
-const routes = require('./routes');
-const connection = require('./config/connection.js');
+const routes = require('../routes');
+const connection = require('../config/connection.js');
 
 // App Configuration
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
