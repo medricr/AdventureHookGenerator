@@ -1,7 +1,7 @@
 {
   "name": "adventurehookgenerator",
   "version": "1.0.0",
-  "description": "A single page app which uses React, Express, Node, and MySQL to generate adventure hooks for ttrpgs",
+  "description": "A single page app which uses Vue.js, Express, Node, and MySQL to generate adventure hooks for ttrpgs",
   "main": "server.js",
   "scripts": {
     "begin": "npm run build && node server.js",
