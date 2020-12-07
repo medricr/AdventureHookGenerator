@@ -9,7 +9,6 @@ const connection = require('./config/connection.js');
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-
 app.get('/getAnts', function(req,res){
 	connection.query('SELECT antagonist FROM present_tense', function(err,res){
 		if(err) throw err;

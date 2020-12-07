@@ -12,7 +12,6 @@ const Sequelize = require('sequelize');
 let sequelize = null;
 if(process.env.JAWSDB_URL){
 	sequelize = new Sequelize(process.env.JAWSDB_URL, {dialect: 'mysql'})
-
 }
 else{
 	sequelize = new Sequelize("adventure_hooks_db", "root", "root", {
@@ -23,9 +22,6 @@ else{
 			max: 5,
 			min: 0,
 			idle: 10000
-
-
-
 		}
 	})
 }
