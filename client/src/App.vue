@@ -1,11 +1,12 @@
 <template>
 	<div class="container">
 		<h1>Whats My Quest?</h1>
+		<button v-on:click="generateOne">Genrate One</button>
 		<div class="card">
 			<div class="display">
 				<h2>{{adventureHook.data}}</h2>
 			</div>
-			<button v-on:click="generateOne">Genrate One</button>
+			
 		</div>
 		
 				<i class="fab fa-github" />
@@ -44,21 +45,25 @@ export default {
   color: #2c3e50;
 	/* color: #FFFFFF; */
 }
+
+
 .card {
-	position: absolute;
-	left: 15%;
-	right: 15%;
-	top: 18%;
-	height: 250px;
+	/* position: absolute; */
+	margin-left: 15%;
+	margin-right: 15%;
+	/* top: 18%; */
+	/* height: 250px; */
 	background-color: #EDAE49;
 	border: 3px solid #FFFFFF;
 	border-radius: 15px 50px;
 	color: black;
+	display: block;
+	overflow: auto;
 }
 .display {
 	margin-left: 5%;
 	margin-right: 5%;
-	margin-top: 8%
+	margin-top: 2%
 
 }
 h1 {
@@ -71,10 +76,11 @@ button {
 	border: 2px solid #FFFFFF;
 	transition-duration: 0.5s;
 	height: 30px;
-	position: absolute;
+	/* position: absolute; */
 	/*//! positioning of button is not perfectly even */
 	right: 45%;
 	bottom: 20px;
+	margin-bottom: 20px;
 	/* Font  */
 	font-family: 'Texturina', serif;
 }

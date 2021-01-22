@@ -25,7 +25,7 @@ VALUES
 ("Distrubing reports have surfaced, telling that ", "a woman claiming to be a living saint ", "has killed the priest of a local temple"),
 ("Legend has it that ", "an ancient evil ", "will unleash hell on our world under the first full moon of the year."),
 ("A local fortune teller has warned that ", "an undead army of lost souls ", "is headed towards the capitol city."),
-("An envoy from a previously undiscovered village in the woods has come to you, warning that ", "a renegade mage", "intends to break the seal of the fabled city of the dead."),
+("An envoy from a previously undiscovered village in the woods has come to you, warning that ", "a renegade mage ", "intends to break the seal of the fabled city of the dead."),
 ("A long lost relative has contacted you, stating that ", "a previously imprisoned demon has escaped, and ", "is searching for revenge against your family."),
 ("Flyers have appeared in town, telling that ", "a famed demon hunter ", " is requesting the aid of any adventurer with a strong sword arm in the heart of the woods."),
 ("Excavation of a nearby cave system has turned up an ancient tablet, which tells that ", "a great and terrible power ", " will visit this realm once more on the soltice.")
