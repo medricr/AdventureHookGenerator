@@ -37,3 +37,14 @@ VALUES
 ("A warrior has been challenging villagers to duels to the death, stating that ", "the bandit king ", "is recruiting a warband."),
 ("A half orc priest, has been murdered. His final journal entry says that ", "the One in Black ", "is close to completing the rite of ascension" );
 
+INSERT INTO past_adHooks (info_source, antagonist, threat)
+VALUES 
+("This feature ", "is coming ", "soon!"),
+("This feature ", "is coming ", "soon!"),
+("This feature ", "is coming ", "soon!")
+
+INSERT INTO future_adHooks (info_source, antagonist, threat)
+VALUES 
+("This feature ", "is coming ", "soon!"),
+("This feature ", "is coming ", "soon!"),
+("This feature ", "is coming ", "soon!")

@@ -8,8 +8,9 @@
 			<label for="present">Present Tense</label>
 			<input type="radio" id="future" value="future_adHook" v-model="adventureHookTense">
 			<label for="future">Future Tense</label>
+			
 		</form>
-		<button v-on:click="generateOne">Genrate One</button>
+		<button type="submit" v-on:click="generateOne">Genrate One</button>
 		<div class="card">
 			<div class="display">
 				<h2>{{adventureHook.data}}</h2>
@@ -29,7 +30,7 @@ export default {
 	data() {
 		return {
 			adventureHook: "",
-			adventureHookTense: ""
+			adventureHookTense: "present_adHook"
 		}
 	},
 	methods: {
