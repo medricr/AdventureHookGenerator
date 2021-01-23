@@ -10,7 +10,11 @@ export default {
 			}
 		});
 	},
-	getHookMulti: function(){
-		return axios.get('/generateMultiple')
+	getHookMulti: function(adventureHook_tense){
+		return axios.get('/generateMultiple', {
+			params: {
+				table: adventureHook_tense
+			}
+		})
 	}
 }

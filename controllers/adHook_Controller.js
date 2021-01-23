@@ -10,17 +10,9 @@ const db = require('../models');
 
 module.exports = {
 	generate_hook: function(req,res){	
-		// ! IF CALLS ARE RESTRUCTURED THIS FUNCTION CAN BE REUSED FOR EACH TENSE
-		// TODO: Restructure call such that req.params.modelName can be used in the runningModel variable below
-		// ! THIS IS ~VERY~ IMPORTANT
-		// ! DO THIS BEFORE YOU DO ~ANYTHING~ ELSE
-		// ! YOU WILL THANK ME LATER
-		let modelName = 'present_adHook';
-		console.log('REQUEST QUERY -> ', req.query.table)
-
 		let queryTable = db[req.query.table];
-
 		let final_string = "";
+		
 		queryTable.findAll({
 		// db.present_adHook.findAll({
 			order: Sequelize.literal('rand()'), limit: 3,
@@ -35,26 +27,23 @@ module.exports = {
 
 	// ! ARRAY IS CLEARED UPON EXITING FOR LOOP?
 	generate_multiple: function(req,res){
-		let temp_string = "";
+		let queryTable = db[req.query.table];
+		let string_one = "";
+		let string_two = "";
+		let string_three = "";
 		let final_string_array = [];
-		let number_of_times = 5;
 
-		for (i = 0; i < number_of_times; i++) {
-			connection.query(
-				'SELECT info_source FROM present_tense ORDER BY RAND() LIMIT 1; SELECT antagonist FROM present_tense ORDER BY RAND() LIMIT 1; SELECT threat FROM present_tense ORDER BY RAND() LIMIT 1',
-				function (err, res) {
-					if (err) throw err;
-					temp_string = temp_string + res[0][0].info_source + res[1][0].antagonist + res[2][0].threat
-
-					// console.log('final constructed string -> ' + temp_string)
-					final_string_array.push(temp_string);
-					// console.log(final_string_array.length)
-					temp_string = "";
-					connection.end;
-				}
-			)
-		}
-		res.json(final_string_array)
-		// console.log(final_string_array)
+		queryTable.findAll({
+			order: Sequelize.literal('rand()'), limit: 3,
+		}).then((results) => {
+			console.log(results);
+			string_one = results[0].info_source + results[1].antagonist + results[2].threat;
+			string_two = results[1].info_source + results[2].antagonist + results[0].threat;
+			string_three = results[2].info_source + results[0].antagonist + results[1].threat;
+			// console.log("final string post edit -> ", final_string);
+			final_string_array.push(string_one, string_two, string_three);
+			console.log("final array -> ", final_string_array);
+			res.json(final_string_array);
+		})
 	}
 }

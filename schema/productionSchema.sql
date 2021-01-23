@@ -1,8 +1,16 @@
-DROP DATABASE IF EXISTS adventure_hooks_db;
-CREATE DATABASE adventure_hooks_db;
-USE adventure_hooks_db;
+DROP DATABASE IF EXISTS acmyrvs8f81m7mcq;
+CREATE DATABASE acmyrvs8f81m7mcq;
+USE acmyrvs8f81m7mcq;
 
--- db name changed from adHooks to adventure_hook_db, table name changed from present_tense to adHooks
+-- CREATE TABLES
+CREATE TABLE past_adHooks (
+	id Int AUTO_INCREMENT NOT NULL,
+	info_source VARCHAR( 255 ) NOT NULL,
+	antagonist VARCHAR( 255 ) NOT NULL,
+	threat VARCHAR(255) NOT NULL,
+
+	PRIMARY KEY ( id )
+);
 
 CREATE TABLE present_adHooks (
 	id Int AUTO_INCREMENT NOT NULL,
@@ -13,6 +21,21 @@ CREATE TABLE present_adHooks (
 	PRIMARY KEY ( id )
 );
 
+CREATE TABLE future_adHooks (
+	id Int AUTO_INCREMENT NOT NULL,
+	info_source VARCHAR( 255 ) NOT NULL,
+	antagonist VARCHAR( 255 ) NOT NULL,
+	threat VARCHAR(255) NOT NULL,
+
+	PRIMARY KEY ( id )
+);
+
+-- TABLE INSERTION
+INSERT INTO past_adHooks (info_source, antagonist, threat)
+VALUES 
+("This feature ", "is coming ", "soon!"),
+("This feature ", "is coming ", "soon!"),
+("This feature ", "is coming ", "soon!");
 
 INSERT INTO present_adHooks (info_source, antagonist, threat)
 VALUES 
@@ -28,7 +51,7 @@ VALUES
 ("An envoy from a previously undiscovered village in the woods has come to you, warning that ", "a renegade mage ", "intends to break the seal of the fabled city of the dead."),
 ("A long lost relative has contacted you, stating that ", "a previously imprisoned demon has escaped, and ", "is searching for revenge against your family."),
 ("Flyers have appeared in town, telling that ", "a famed demon hunter ", " is requesting the aid of any adventurer with a strong sword arm in the heart of the woods."),
-("Excavation of a nearby cave system has turned up an ancient tablet, which tells that ", "a great and terrible power ", " will visit this realm once more on the soltice.")
+("Excavation of a nearby cave system has turned up an ancient tablet, which tells that ", "a great and terrible power ", " will visit this realm once more on the soltice."),
 ("A local inventor has petitioned for help, saying that ", "an army of steel golems ", "has gone insane and intends to raze the city."),
 ("A group of monster hunters has asked for your help in eliminating ", "a lich lord ", "that has sworn to plunge the world into darkness."),
 ("Granny (nobody knows her real name), says that ", "her pet owlbear, mittens, ", "has vanished into thin air"),
@@ -37,14 +60,8 @@ VALUES
 ("A warrior has been challenging villagers to duels to the death, stating that ", "the bandit king ", "is recruiting a warband."),
 ("A half orc priest, has been murdered. His final journal entry says that ", "the One in Black ", "is close to completing the rite of ascension" );
 
-INSERT INTO past_adHooks (info_source, antagonist, threat)
-VALUES 
-("This feature ", "is coming ", "soon!"),
-("This feature ", "is coming ", "soon!"),
-("This feature ", "is coming ", "soon!")
-
 INSERT INTO future_adHooks (info_source, antagonist, threat)
 VALUES 
 ("This feature ", "is coming ", "soon!"),
 ("This feature ", "is coming ", "soon!"),
-("This feature ", "is coming ", "soon!")
+("This feature ", "is coming ", "soon!");

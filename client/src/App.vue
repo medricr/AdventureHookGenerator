@@ -11,9 +11,15 @@
 			
 		</form>
 		<button type="submit" v-on:click="generateOne">Genrate One</button>
+		<button v-on:click="generateMultiple">Generate Three</button>
 		<div class="card">
 			<div class="display">
-				<h2>{{adventureHook.data}}</h2>
+				<h2 v-if="adventureHook.data != null">{{adventureHook.data}}</h2>
+				<ul v-if="adventureHookArray.data != null">
+					<li>{{adventureHookArray.data[0]}}</li>
+					<li>{{adventureHookArray.data[1]}}</li>
+					<li>{{adventureHookArray.data[2]}}</li>
+				</ul>
 			</div>
 			
 		</div>
@@ -30,18 +36,27 @@ export default {
 	data() {
 		return {
 			adventureHook: "",
+			adventureHookArray: [],
 			adventureHookTense: "present_adHook"
 		}
 	},
 	methods: {
 		async generateOne(){
+			
 			this.adventureHook = await API.getHook(this.adventureHookTense);
+			this.adventureHookArray = [];
 			console.log("retrieved adventure hook -> ", this.adventureHook.data);
 		},
 		async test(){
 			this.adventureHook = await API.testHook();
 			console.log("testhook -> ", this.adventureHook.data)
 		},
+		async generateMultiple() {
+			
+			this.adventureHookArray = await API.getHookMulti(this.adventureHookTense);
+			this.adventureHook = "";
+			console.table("retrieved array -> ", this.adventureHookArray);
+		}
 		
 	}
 }
