@@ -3,12 +3,26 @@
 const connection = require('../config/connection')
 const Sequelize = require('sequelize');
 
-const adHook = require("../models/adHook.js")
+// const adHook = require("../models/adHook.js");
+// const testSchema = require('../models/testSchema.js');
+
+const db = require('../models');
 
 module.exports = {
 	generate_hook: function(req,res){	
+		// ! IF CALLS ARE RESTRUCTURED THIS FUNCTION CAN BE REUSED FOR EACH TENSE
+		// TODO: Restructure call such that req.params.modelName can be used in the runningModel variable below
+		// ! THIS IS ~VERY~ IMPORTANT
+		// ! DO THIS BEFORE YOU DO ~ANYTHING~ ELSE
+		// ! YOU WILL THANK ME LATER
+		let modelName = 'present_adHook';
+		console.log('REQUEST QUERY -> ', req.query.table)
+
+		let queryTable = db[req.query.table];
+
 		let final_string = "";
-		adHook.findAll({
+		queryTable.findAll({
+		// db.present_adHook.findAll({
 			order: Sequelize.literal('rand()'), limit: 3,
 		}).then((results) => {
 			console.log(results);

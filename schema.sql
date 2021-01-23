@@ -4,7 +4,7 @@ USE adventure_hooks_db;
 
 -- db name changed from adHooks to adventure_hook_db, table name changed from present_tense to adHooks
 
-CREATE TABLE adHooks (
+CREATE TABLE present_adHooks (
 	id Int AUTO_INCREMENT NOT NULL,
 	info_source VARCHAR( 255 ) NOT NULL,
 	antagonist VARCHAR( 255 ) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE adHooks (
 );
 
 
-INSERT INTO adHooks (info_source, antagonist, threat)
+INSERT INTO present_adHooks (info_source, antagonist, threat)
 VALUES 
 ("Rumour has it that ", "a bandit horde ", " may attempt to kidnap the crown prince"),
 ("The elders from the neighboring village have informed you that ", "a family of manticores ", "has begun preparing for a ritual which will awaken an elder dragon"),
@@ -35,5 +35,5 @@ VALUES
 ("A pellar from the next village has complained that ", "a group of mischevious goblins ", "is ruining this years crop."),
 ("The church has issued a bounty, saying only that ", "a spiritual leader in the region ", "is trying to convert the regions tribes."),
 ("A warrior has been challenging villagers to duels to the death, stating that ", "the bandit king ", "is recruiting a warband."),
-("A half orc priest, has been murdered. His final journal entry says that ", "the One in Black ", "is close to completing the rite of ascension" )
+("A half orc priest, has been murdered. His final journal entry says that ", "the One in Black ", "is close to completing the rite of ascension" );
 

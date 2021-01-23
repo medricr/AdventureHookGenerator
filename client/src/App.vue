@@ -1,6 +1,14 @@
 <template>
 	<div class="container">
 		<h1>Whats My Quest?</h1>
+		<form class="tense_selector">
+			<input type="radio" id="past" value="past_adHook" v-model="adventureHookTense">
+			<label for="past">Past Tense</label>
+			<input type="radio" id="present" value="present_adHook" v-model="adventureHookTense">
+			<label for="present">Present Tense</label>
+			<input type="radio" id="future" value="future_adHook" v-model="adventureHookTense">
+			<label for="future">Future Tense</label>
+		</form>
 		<button v-on:click="generateOne">Genrate One</button>
 		<div class="card">
 			<div class="display">
@@ -8,10 +16,8 @@
 			</div>
 			
 		</div>
-		
-				<i class="fab fa-github" />
-				<a href="https://github.com/medricr">GitHub</a>
-		
+			<i class="fab fa-github" />
+			<a href="https://github.com/medricr">GitHub</a>
 	</div>
 </template>
 
@@ -22,14 +28,20 @@ export default {
 	name: "App",
 	data() {
 		return {
-			adventureHook: ""
+			adventureHook: "",
+			adventureHookTense: ""
 		}
 	},
 	methods: {
 		async generateOne(){
-			this.adventureHook = await API.getHook();
+			this.adventureHook = await API.getHook(this.adventureHookTense);
 			console.log("retrieved adventure hook -> ", this.adventureHook.data);
-		}
+		},
+		async test(){
+			this.adventureHook = await API.testHook();
+			console.log("testhook -> ", this.adventureHook.data)
+		},
+		
 	}
 }
 </script>
