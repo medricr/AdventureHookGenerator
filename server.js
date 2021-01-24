@@ -12,7 +12,6 @@ app.use(express.json());
 app.get('/getAnts', function(req,res){
 	connection.query('SELECT antagonist FROM present_tense', function(err,res){
 		if(err) throw err;
-
 		console.log(res);
 		connection.end
 	})
@@ -22,5 +21,3 @@ app.use(routes)
 app.listen(PORT, ()=> {
 	console.log('App listening on port ' + PORT + '! :^)')
 })
-
-

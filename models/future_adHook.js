@@ -1,5 +1,4 @@
 const Sequelize = require('sequelize');
-
 const sequelize = require('../config/connection.js');
 
 const future_adHook = sequelize.define('future_adHook', {
@@ -12,5 +11,4 @@ const future_adHook = sequelize.define('future_adHook', {
 })
 
 future_adHook.sync();
-
 module.exports = future_adHook;

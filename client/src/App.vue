@@ -8,7 +8,6 @@
 			<label for="present">Present Tense</label>
 			<input type="radio" id="future" value="future_adHook" v-model="adventureHookTense">
 			<label for="future">Future Tense</label>
-			
 		</form>
 		<button type="submit" v-on:click="generateOne">Genrate One</button>
 		<button v-on:click="generateMultiple">Generate Three</button>
@@ -21,7 +20,6 @@
 					<li>{{adventureHookArray.data[2]}}</li>
 				</ul>
 			</div>
-			
 		</div>
 			<i class="fab fa-github" />
 			<a href="https://github.com/medricr">GitHub</a>
@@ -40,47 +38,35 @@ export default {
 			adventureHookTense: "present_adHook"
 		}
 	},
+	mounted(){
+			this.adventureHook = {data: "Click one of the buttons above to generate an adventure hook!"}
+		},
 	methods: {
-		async generateOne(){
-			
-			this.adventureHook = await API.getHook(this.adventureHookTense);
+		async generateOne(){	
+			this.adventureHook = await API.getSingleHook(this.adventureHookTense);
 			this.adventureHookArray = [];
 			console.log("retrieved adventure hook -> ", this.adventureHook.data);
 		},
-		async test(){
-			this.adventureHook = await API.testHook();
-			console.log("testhook -> ", this.adventureHook.data)
-		},
-		async generateMultiple() {
-			
-			this.adventureHookArray = await API.getHookMulti(this.adventureHookTense);
+		async generateMultiple() {	
+			this.adventureHookArray = await API.getMultipleHooks(this.adventureHookTense);
 			this.adventureHook = "";
 			console.table("retrieved array -> ", this.adventureHookArray);
-		}
-		
+		}		
 	}
 }
 </script>
 
 <style scoped>
-
 .container {
-   /* font-family: Avenir, Helvetica, Arial, sans-serif; */
 	font-family: 'Texturina', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-	/* color: #FFFFFF; */
 }
-
-
 .card {
-	/* position: absolute; */
 	margin-left: 15%;
 	margin-right: 15%;
-	/* top: 18%; */
-	/* height: 250px; */
 	background-color: #EDAE49;
 	border: 3px solid #FFFFFF;
 	border-radius: 15px 50px;
@@ -92,7 +78,6 @@ export default {
 	margin-left: 5%;
 	margin-right: 5%;
 	margin-top: 2%
-
 }
 h1 {
 	color:#FFFFFF;
@@ -104,18 +89,17 @@ button {
 	border: 2px solid #FFFFFF;
 	transition-duration: 0.5s;
 	height: 30px;
-	/* position: absolute; */
 	/*//! positioning of button is not perfectly even */
 	right: 45%;
 	bottom: 20px;
 	margin-bottom: 20px;
+	margin-right: 10px;
 	/* Font  */
 	font-family: 'Texturina', serif;
 }
 button:hover {
 	background-color: #00798C;
 }
-
 a {
 	position: absolute;
 	bottom: 10px;

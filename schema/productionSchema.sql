@@ -33,16 +33,17 @@ CREATE TABLE future_adHooks (
 -- TABLE INSERTION
 INSERT INTO past_adHooks (info_source, antagonist, threat)
 VALUES 
-("This feature ", "is coming ", "soon!"),
-("This feature ", "is coming ", "soon!"),
-("This feature ", "is coming ", "soon!");
+("Ancient scrolls have been unearthed, telling that ", "an elder god ", "will bring an end to life as we know it."),
+("Long ago, it was said that ", "the spirit of a wrongly killed priest ", " will return to stalk the land."),
+("Ledgends from centuries before this land was settled tell that, ", "a great and terrible plague ", "will sweep across this land, wiping out all life."),
+("It has long been foretold by the stars that ", "an ancient race of slavers ", "will descend upon this world to rule us all.");
 
 INSERT INTO present_adHooks (info_source, antagonist, threat)
 VALUES 
 ("Rumour has it that ", "a bandit horde ", " may attempt to kidnap the crown prince"),
 ("The elders from the neighboring village have informed you that ", "a family of manticores ", "has begun preparing for a ritual which will awaken an elder dragon"),
 ("The advisor to the royal famiy has told you that ", "the local court wizard ", "has absconded with a precious religous artifact from a local temple."),
-("The town drunk has been heard saying that they personally know ", " a coven of witches ", "has cursed the local nobility"),
+("The town drunk has been heard saying that they personally know that", " a coven of witches ", "has cursed the local nobility"),
 ("Reports have come from from afar that ", "an ancient vampire lord ", "intends to wipe out all life on the continent"),
 ("A mysterious letter has made its way into your hands, stating that ", "a group of cultists ", "intends to start a war"),
 ("Distrubing reports have surfaced, telling that ", "a woman claiming to be a living saint ", "has killed the priest of a local temple"),
